@@ -26,8 +26,8 @@ const SignUp = () => {
         
     };
 
-    const [token] = useToken(user || gUser)
-
+    const [token] = useToken(user || gUser) 
+    
     let signInError;
     if (loading || gLoading || updating) {
         return <Loading></Loading>
