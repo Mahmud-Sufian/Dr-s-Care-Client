@@ -21,7 +21,7 @@ const DoctorRow = ({ doctor, index , refetch, setDeleteDoctor}) => {
             <td>{Specialization}</td>
             <td>
                 <label onClick={()=> setDeleteDoctor(doctor)} htmlFor="delete-confirm-modal" className="btn btn-xs btn-error">DELETE</label>
-            </td>
+                 </td>
         </tr>
     )
 }
