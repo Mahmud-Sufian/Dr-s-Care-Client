@@ -6,7 +6,7 @@ const DeleteConfirmModal = ({ deleteDoctor, refetch , setDeleteDoctor}) => {
     console.log(deleteDoctor)
 
     const handleDelete = () => {
-        fetch(`http://localhost:5000/doctor/${email}`, {
+        fetch(`https://dr-s-care-server.vercel.app/doctor/${email}`, {
             method: 'DELETE',
             headers: {
                 authorization: `beare ${localStorage.getItem('accessToken')}`

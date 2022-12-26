@@ -9,7 +9,7 @@ import CheckoutForm from './CheckoutForm';
 const Payment = () => {
     const { id } = useParams();
 
-    const url = `http://localhost:5000/booking/${id}`;
+    const url = `https://dr-s-care-server.vercel.app/booking/${id}`;
     const { data: appointment, isLoading } = useQuery(['booking', id], () => fetch(url, { headers: { authorization: `bearer ${localStorage.getItem('accessToken')}` } }).then(res => res.json()));
 
     if (isLoading) {

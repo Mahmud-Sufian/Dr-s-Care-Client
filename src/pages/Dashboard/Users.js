@@ -4,7 +4,7 @@ import Loading from '../Shared/Loading';
 import UserRow from './UserRow';
 
 const Users = () => {
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch(`http://localhost:5000/user`, {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch(`https://dr-s-care-server.vercel.app/user`, {
         method: 'GET',
         headers: {
             authorization : `bearer ${localStorage.getItem('accessToken')}`
@@ -24,13 +24,13 @@ const Users = () => {
                         <tr>
                             <th>SL.</th>
                             <th>Email</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
+                            <th>Make Admin</th>
+                            <th>Remove</th>
                         </tr>
                     </thead>
                     <tbody>  
                         {
-                            users?.map((user) => <UserRow key={user._id} user={user} refetch={refetch}></UserRow>)
+                            users?.map((user, i) => <UserRow key={i} user={user} refetch={refetch} i={i}></UserRow>)
                         }
                     </tbody>
                 </table>

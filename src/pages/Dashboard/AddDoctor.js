@@ -6,7 +6,7 @@ import Loading from '../Shared/Loading';
 
 const AddDoctor = () => {
 
-    const { data: services, isLoading } = useQuery('services', () => fetch(`http://localhost:5000/service`).then(res => res.json()));
+    const { data: services, isLoading } = useQuery('services', () => fetch(`https://dr-s-care-server.vercel.app/service`).then(res => res.json()));
 
     const imageStorageKey = '20ee534ec022d950affa1ad4da921bd9'; 
 
@@ -33,7 +33,7 @@ const AddDoctor = () => {
                     img: img
                 }
 
-                fetch(`http://localhost:5000/doctor`, {
+                fetch(`https://dr-s-care-server.vercel.app/doctor`, {
                     method: 'POST',
                     headers: {
                         'content-type' : 'application/json',

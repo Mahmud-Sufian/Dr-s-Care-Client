@@ -7,7 +7,7 @@ import DoctorRow from './DoctorRow'
 const Managedoctors = () => {
     const [deleteDoctor, setDeleteDoctor] = useState(null);
 
-    const { data: doctors, isLoading, refetch } = useQuery('doctors', () => fetch(`http://localhost:5000/doctor`, { method: 'GET', headers: { authorization: `bearer ${localStorage.getItem('accessToken')}` } }).then(res => res.json()))
+    const { data: doctors, isLoading, refetch } = useQuery('doctors', () => fetch(`https://dr-s-care-server.vercel.app/doctor`, { method: 'GET', headers: { authorization: `bearer ${localStorage.getItem('accessToken')}` } }).then(res => res.json()))
 
     if (isLoading) {
         return <Loading></Loading>

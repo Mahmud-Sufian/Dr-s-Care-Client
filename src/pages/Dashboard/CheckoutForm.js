@@ -6,7 +6,7 @@ const CheckoutForm = ({ appointment }) => {
 
     const [clientSecret, setClientSecret] = useState("");
     useEffect(() => {
-        fetch("http://localhost:5000/create-payment-intent", {
+        fetch("https://dr-s-care-server.vercel.app/create-payment-intent", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -84,7 +84,7 @@ const CheckoutForm = ({ appointment }) => {
                 transactionId: paymentIntent.id
             }
 
-            fetch(`http://localhost:5000/booking/${_id}`, {
+            fetch(`https://dr-s-care-server.vercel.app/booking/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type' : 'application/json',
